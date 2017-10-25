@@ -1,9 +1,11 @@
 # Load packages
 install.packages("ggplot2")
+install.packages("devtools")
+library(devtools)
 library(ggplot2)
 
 #Getting corn yields
-corn <- read.table("C:\\Users\\nethe\\Documents\\Research", header = TRUE, sep = "\t", fill = TRUE)
+corn <- read.table("C:\\Users\\nethe\\Documents\\Research\\corn_data.txt", header = TRUE, sep = "\t", fill = TRUE)
 field_corn <- subset(corn, COMMODITY_DESC == 'CORN')
 IN_field_corn <- subset(field_corn, STATE_NAME == 'INDIANA')
 IN_field_corn <- IN_field_corn[IN_field_corn$YEAR >= 1981 & IN_field_corn$YEAR <= 2010, ]
